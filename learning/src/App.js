@@ -1,22 +1,15 @@
-import './App.css';
+import style  from './App.module.css';
 
 function App() {
+  const age = 19;
+  const isGreen = true;
+
   return (
-    <div className="App">
-      <Jobs salary={90000} position="Senior SDE" company="Amazon"/>
-      <Jobs salary={12000} position="Junior SDE" company="Google"/>
-      <Jobs salary={10000} position="Project Manager" company="Netflix"/>
+    <div>
+      {age >= 18 ? <h1>All Right</h1> : <h1>Under Age</h1>}
+      <h1 style={{color: isGreen ? "green" : "red"}}>This has a colour</h1>
     </div>
   );
 }
-const Jobs = (props) => {
-  return (
-    <div>
-      <p>{props.salary}</p>
-      <p>{props.position}</p>
-      <p>{props.company}</p>
-    </div>
-  );
-};
 
 export default App;  
