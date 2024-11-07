@@ -1,23 +1,27 @@
 import styles  from './App.module.css';
 import { User } from './User';
+import { Planet } from './Planet';
 
 
 function App() {
-  const users = [
-    { name: "Lucas", age: 21 },
-    { name: "Jake", age: 25},
-    { name: "Jessica", age: 45}
+  const planets = [
+    {name: "Mars", isGasPlanet: false},
+    {name: "Earth", isGasPlanet: false},
+    {name: "Jupiter", isGasPlanet: true},
+    {name: "Venus", isGasPlanet: false},
+    {name: "Neptune", isGasPlanet: true},
+    {name: "Uranus", isGasPlanet: true},
   ];
 
-  return (
-    <div className = "App">
-      {users.map((user,key) =>
-      {
-        return (
-          <User name = {user.name} age = {user.age}/>
-        );
-      })}
-    </div>
+  return(
+  <div className = "App">
+    {planets.map((planet, key) =>
+    {
+      return(
+       planet.isGasPlanet  && <Planet name = {planet.name}/>
+      );
+    })}
+  </div>
   );
 }
 
